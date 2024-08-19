@@ -31,7 +31,7 @@ export class TaskService {
   }
 
    deleteTask(task: Task){
-     this.firestore.collection('tasks').doc(task.id).delete().then(_ => {
+     this.firestore.collection('tasks').doc(task.id!).delete().then(_ => {
        this.store.dispatch(TaskActionGroup.feedbackMessage({message: 'Task deleted successfully'}))
      }).catch(e => {
        this.store.dispatch(TaskActionGroup.errorMessage({error: e.message || 'something went wrong.'}))
@@ -40,7 +40,7 @@ export class TaskService {
   }
 
    updateTask(task: Task) {
-     this.firestore.collection('tasks').doc(task.id).update(task).then(_ => {
+     this.firestore.collection('tasks').doc(task.id!).update(task).then(_ => {
        this.store.dispatch(TaskActionGroup.feedbackMessage({message: 'Task updated successfully'}))
      }).catch(e => {
        this.store.dispatch(TaskActionGroup.errorMessage({error: e.message || 'something went wrong.'}))
