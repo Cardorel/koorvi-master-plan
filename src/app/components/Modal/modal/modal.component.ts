@@ -50,13 +50,16 @@ export class ModalComponent implements OnInit {
       id: this.isEditModal() ? this.currentTask()!.id : undefined,
     }
     try {
-      if (this.currentTask()?.userId === userId) {
-        this.isEditModal() ?
-          this.store.dispatch(TaskActionGroup.dispatchUpdatedTask({task})) :
-          this.store.dispatch(TaskActionGroup.dispatchNewTask({task}));
-      } else{
+      if (this.isEditModal()){
+        this.currentTask()?.userId === userId &&
+        this.store.dispatch(TaskActionGroup.dispatchUpdatedTask({task}))
+
+        this.currentTask()?.userId !== userId &&
         this.store.dispatch(TaskActionGroup.feedbackMessage({message: 'You can not update this task!'}))
+      }else{
+        this.store.dispatch(TaskActionGroup.dispatchNewTask({task}))
       }
+
       this.closeModal();
       this.addForm().reset();
     } catch (e) {
