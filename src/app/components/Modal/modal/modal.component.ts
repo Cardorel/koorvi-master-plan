@@ -47,7 +47,6 @@ export class ModalComponent implements OnInit {
       completed: this.isEditModal() ? this.currentTask()!.completed : false,
       title: this.addForm().value.title as string,
       userId,
-      id: this.isEditModal() ? this.currentTask()!.id : '',
     }
     try {
       if (this.isEditModal()){
