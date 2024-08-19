@@ -28,6 +28,7 @@ export class LoginComponent {
     if (this.loginForm.valid){
       try {
         await this.authService.login(email, password);
+        window.location.reload();
         await this.router.navigate(['/']);
       } catch (e) {
         console.log(e)
