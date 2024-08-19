@@ -1,0 +1,5 @@
+<div class="md:flex sm:grid justify-between gap-4 items-center">
+  <h2 class="font-bold text-2xl text-black-100">👋🏼 <span [ngStyle]="{'color': currentUser()?.color}" class="text-user-lilac">Hi {{currentUser()?.displayName}}</span>, here are your team tasks
+  </h2>
+  <button (click)="logout()" class="w-[99px] sm:w-full md:w-auto pb-[12.5px] pl-6 pr-6 pt-[12.5px] rounded-[10px] text-black-100 border-gray-30 border-[1px]">Log out</button>
+</div>

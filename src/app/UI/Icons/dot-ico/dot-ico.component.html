@@ -1,0 +1,7 @@
+<button class="flex gap-1">
+  @for( dot of dotCount; track dot){
+    <span
+      [ngStyle]="{'background': !isOpen() ? '#D0D3D4':'#242424'}"
+      class="w-1 group-hover:!bg-black-100 h-1 rounded-full block bg-gray-30"></span>
+  }
+</button>

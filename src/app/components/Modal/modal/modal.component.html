@@ -1,0 +1,21 @@
+<div [formGroup]="addForm()" class="fixed inset-0 modal-container flex items-center justify-center z-50 p-4">
+  <div class="bg-white-100 w-[390px] relative p-8 rounded-[18px] grid gap-4 shadow-2xl">
+      <h2 class="font-bold text-2xl">
+        {{modalText().title}} task
+      </h2>
+    <button class="absolute right-4 p-4 cursor-pointer top-3" (click)="closeModal()">
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.0625 0.947917C13.6562 0.541667 13 0.541667 12.5937 0.947917L7.5 6.03125L2.40625 0.9375C2 0.53125 1.34375 0.53125 0.9375 0.9375C0.53125 1.34375 0.53125 2 0.9375 2.40625L6.03125 7.5L0.9375 12.5937C0.53125 13 0.53125 13.6562 0.9375 14.0625C1.34375 14.4687 2 14.4687 2.40625 14.0625L7.5 8.96875L12.5937 14.0625C13 14.4687 13.6562 14.4687 14.0625 14.0625C14.4687 13.6562 14.4687 13 14.0625 12.5937L8.96875 7.5L14.0625 2.40625C14.4583 2.01042 14.4583 1.34375 14.0625 0.947917Z" fill="#93979C"/>
+      </svg>
+    </button>
+    <textarea formControlName="title" required [placeholder]="'What do you need to ' + modalText().title.toLowerCase() + '...'" class="border-[1px] focus:border-[1px] outline-none rounded-[12px] resize-none w-full border-gray-30 p-4" rows="5"></textarea>
+    <div class="flex gap-2 justify-end items-center">
+      <button type="reset" (click)="closeModal()" class="text-black-100 border-[1px] pt-[12.5px] pb-[12.5px] pl-[24px] pr-[24px] rounded-[10px] hover:bg-gray-5">Cancel</button>
+      <button
+        (click)="submitTask()"
+        [ngClass]="!addForm().valid?'cursor-not-allowed':'cursor-pointer'"
+        class="bg-blue-100 text-white pt-[12.5px] pb-[12.5px] pl-[24px] pr-[24px] rounded-[10px]"
+      >{{modalText().btnText}}</button>
+   </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<div class="grid gap-2 relative md:max-h-[55vh] md:pr-3 md:overflow-auto md:scroll-auto">
+  @for(task of tasks(); track task.id){
+    <app-check-item [task]="task" (openEditModalEmitter)="openEditModal()"></app-check-item>
+  }
+</div>

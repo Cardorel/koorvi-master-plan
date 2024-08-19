@@ -1,0 +1,23 @@
+@defer(when !isLoading()){
+  <div class="md:p-[48px] grid gap-8">
+    <app-header></app-header>
+    <app-task-container
+      (openEditModalEmitter)="openEditModal('Edit')"
+      (openModalEmitter)="openModal()"
+    ></app-task-container>
+    @if (isModalOpen()){
+      <app-modal
+        (closeModalEmitter)="closeModal()"
+        [addForm]="addForm"
+        [modalText]="modalText()"></app-modal>
+    }
+    @if(feedbackMessage().length > 1){
+      <app-feedback-message [message]="feedbackMessage()"></app-feedback-message>
+    }
+  </div>
+}
+@placeholder{
+  <app-spinner-ico></app-spinner-ico>
+} @loading (after 100ms; minimum 200ms){
+  <app-spinner-ico></app-spinner-ico>
+}

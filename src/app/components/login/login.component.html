@@ -1,0 +1,14 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()" class="flex items-center h-full justify-center">
+  <div class="bg-white-100 grid p-[32px] gap-4 sm:w-auto md:w-[390px] rounded-[18px]">
+    <h2 class="font-bold text-2xl">Welcome back</h2>
+    <label class="grid gap-1">
+      <span class="font-medium text-xs">E-mail</span>
+      <input formControlName="email" placeholder="laura@example.com" type="email" required class="login-input">
+    </label>
+    <label class="grid gap-1">
+      <span class="font-medium text-xs">Password</span>
+      <input formControlName="password" type="password" placeholder="***********" required class="login-input">
+    </label>
+    <button type="submit" class="bg-blue-100 text-white p-[12.5px] rounded-[10px]">Login</button>
+  </div>
+</form>
