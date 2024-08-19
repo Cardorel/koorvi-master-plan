@@ -11,10 +11,11 @@
         [addForm]="addForm"
         [modalText]="modalText()"></app-modal>
     }
-    @if(feedbackMessage().length > 1){
-      <app-feedback-message [message]="feedbackMessage()"></app-feedback-message>
-    }
   </div>
+
+  @if(feedbackMessage().length > 1){
+    <app-feedback-message [message]="feedbackMessage()"></app-feedback-message>
+  }
 }
 @placeholder{
   <app-spinner-ico></app-spinner-ico>
