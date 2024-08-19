@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  padding: 16px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 24px;
+  }
+}
+
+
+@layer components {
+  .login-input {
+    @apply p-[12.5px] border-[1px] rounded-[10px] border-gray-30;
+  }
+}
