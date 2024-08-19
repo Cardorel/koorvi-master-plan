@@ -5,6 +5,7 @@
 
 body {
   padding: 16px;
+  height: 100%;
 }
 
 @media (min-width: 768px) {

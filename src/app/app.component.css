@@ -1,9 +1,9 @@
 .app-container {
-  min-height: calc(100vh - 32px);
+  min-height: calc(100lvh - 32px);
 }
 
 @media (min-width: 768px) {
   .app-container {
-    min-height: calc(100vh - 48px);
+    min-height: calc(100dvh - 48px);
   }
 }
